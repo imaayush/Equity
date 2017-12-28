@@ -14,7 +14,7 @@ class BseWebScraper():
         path = self._store_stream_locally(resp)
         file_names = self._unzip_file(path)
 
-        return file_names[0]
+        return "/tmp/" + file_names[0]
 
     def _store_stream_locally(self, s, suffix='.zip'):
         """store zip file locally """

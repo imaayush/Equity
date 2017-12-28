@@ -33,6 +33,8 @@ class EquityParser():
     def parse(self, path):
         """Take .csv file path as input and return list of dic"""
         companies_details = []
+        if not self._is_readable_file(path):
+            return ValueError( '{}: file "{}" does not exist, or is not readable'.format( path, path ) )
         with open(path, "rb") as finput:
             self.lines = finput.read().split('\n')
             column_names_with_index = self._find_company_colums_with_index(
