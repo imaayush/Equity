@@ -1,11 +1,14 @@
 import redis
+import os
 from constants import SHOW_NUMBER_COMPANIES
+
+redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
 
 
 class RedisServices():
     def __init__(self):
         """Connect to redis"""
-        self.redis = redis.StrictRedis(host='localhost', port=6379, db=0)
+        self.redis = redis.from_url(redis_url)
 
     def post(self, companies_details):
         """Store companies details to redis database"""
