@@ -2,7 +2,7 @@ import cherrypy
 from views.view import ViewBHAVCopy
 
 
-class BhavCopy(object):
+class Routes(object):
 
     @cherrypy.expose
     def companies(self, company_name=None):
