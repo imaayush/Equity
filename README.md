@@ -36,5 +36,9 @@
           
    #### Run cherrypy server
          python main.py
+   
+   #### Run Test
+         nosetests services/tests
+         py.test -s tests.py
 
       
