@@ -35,6 +35,9 @@ class EquityParser():
                     "OPEN":4, "HIGH":5, "LOW": 6,
                     "CLOSE": 7}
            """
+        if not self._check_required_columns(columns_in_file):
+            return ValueError('missing, required field')
+
         column_names_with_index = {}
         for index_num in range(0, len(columns_in_file)):
             if columns_in_file[index_num] in self.column_names:
@@ -64,3 +67,14 @@ class EquityParser():
                         line, column_names_with_index))
 
         return companies_details
+
+    def _check_required_columns(self, columns_in_file):
+        clean_cloumn_names = []
+        for column_name in columns_in_file:
+            clean_cloumn_names.append(column_name.strip())
+
+        for column_name in self.column_names:
+            if not (column_name in clean_cloumn_names):
+                return False
+
+        return True
