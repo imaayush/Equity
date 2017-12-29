@@ -23,12 +23,12 @@ class ViewBHAVCopy():
         for company_details in companies_details:
             if company_details:
                 html += '<tr> <td> %s </td> <td> %s </td>  <td> %s </td> <td> %s </td>\
-                <td> %s </td> <td> %s </td></tr>' % (company_details["SC_CODE"],
-                                                     company_details["SC_NAME"],
-                                                     company_details["OPEN"],
-                                                     company_details["HIGH"],
-                                                     company_details["LOW"],
-                                                     company_details["CLOSE"])
+                <td> %s </td><td> %s </td></tr>' % (company_details["SC_CODE"],
+                                                    company_details["SC_NAME"],
+                                                    company_details["OPEN"],
+                                                    company_details["HIGH"],
+                                                    company_details["LOW"],
+                                                    company_details["CLOSE"])
 
         html += '</table>'
         return html
