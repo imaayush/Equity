@@ -36,7 +36,7 @@ class EquityParser():
                     "CLOSE": 7}
            """
         if not self._check_required_columns(columns_in_file):
-            return ValueError('missing, required field')
+            raise ValueError('missing, required field')
 
         column_names_with_index = {}
         for index_num in range(0, len(columns_in_file)):

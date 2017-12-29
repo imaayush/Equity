@@ -12,7 +12,10 @@ def scrape_dowload_store_bhavcopy():
     bse = BseWebScraper()
     path_to_csv = bse.download_equity_csv()
     parser = EquityParser()
-    companies_details = parser.parse(path_to_csv)
+    try:
+        companies_details = parser.parse(path_to_csv)
+    except ValueError:
+        raise
     rdb = RedisServices()
     rdb.post(companies_details)
     bse.delete_file("/tmp/" + path_to_csv)

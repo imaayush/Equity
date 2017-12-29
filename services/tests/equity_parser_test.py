@@ -16,3 +16,12 @@ class EquityParserTest(TestCase):
         companies_details = parser.parse("")
         self.assertEqual(companies_details.message,
                          ': file "" does not exist, or is not readable')
+
+    def test_required_columns_missing(self):
+        parser = EquityParser()
+        try:
+            parser.parse(ROOT_DIR + "/data/EQ261217_INVALID.CSV")
+        except ValueError as e:
+            err = e
+
+        self.assertEqual(err.message, 'missing, required field')
