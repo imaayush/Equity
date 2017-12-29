@@ -43,12 +43,12 @@ class WebScraperTest(TestCase):
         parser = EquityParser()
         companies_details = parser.parse(path_to_csv)
         bse.delete_file(path_to_csv)
-        self.assertEqual(companies_details[0].keys(), ['SC_CODE',
-                                                       'SC_NAME',
-                                                       'HIGH',
-                                                       'LOW',
-                                                       'CLOSE',
-                                                       'OPEN'])
+        self.assertEqual(set(companies_details[0].keys()), {'SC_CODE',
+                                                            'SC_NAME',
+                                                            'HIGH',
+                                                            'LOW',
+                                                            'CLOSE',
+                                                            'OPEN'})
 
 
 if __name__ == "__main__":
