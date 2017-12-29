@@ -16,24 +16,25 @@
 
   ## Setting Dev Enviornment
 
-      ### Install basics
+     
+   #### Install basics
           This setup is for Ubuntu 14.10 or later
           sudo aptitude install git python-virtualenv python-dev
 
-      ### Set up virtual environment, and install dependencies
+   #### Set up virtual environment, and install dependencies
           virtualenv env
           source env/bin/activate
 
-      ### Clone repository and install requirements
+   #### Clone repository and install requirements
 
           git clone https://github.com/imaayush/Equity.git
           cd Equity
           pip install -r requirements.txt
           
-      ### Run script
+   #### Run script
           python bhavcopy_script.py
           
-      ## Run cherrypy server
+   #### Run cherrypy server
          python main.py
 
       
