@@ -9,7 +9,7 @@ class ViewBHAVCopy():
     def get_top_ten_view(self):
         """return view for top ten companies"""
         companies_details = self.rdb.get_top_ten()
-        return self._page_view(self._print_table(companies_details))
+        return self._page_view(self._print_table(companies_details) if company_details else "")
 
     def get_by_name_view(self, company_name):
         """Return view for search """
